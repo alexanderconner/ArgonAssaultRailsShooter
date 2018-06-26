@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -8,10 +9,13 @@ public class PlayerController : MonoBehaviour {
     [Header("General")]
     [Tooltip("In ms^-1")] [SerializeField] float xSpeed = 15f;
     [Tooltip("In ms^-1")] [SerializeField] float ySpeed = 15f;
+    
     public float maxXRange = 6.5f;
     public float minXRange = -6.5f;
     public float maxYRange = 4f;
     public float minYRange = -4f;
+
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen Position based")]
     [SerializeField] float positionPitchFactor = -2f;
@@ -40,9 +44,12 @@ public class PlayerController : MonoBehaviour {
         {
             processTranslation();
             processRotation();
+            processFiring();
 
         }
     }
+
+
     private void processTranslation()
     {
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -78,5 +85,34 @@ public class PlayerController : MonoBehaviour {
         print("Player Died");
         isControlEnabled = false;
     }
+
+    void processFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    private void DeactivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
+    }
+
 
 }

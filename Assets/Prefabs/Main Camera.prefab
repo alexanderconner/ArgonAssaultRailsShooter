@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 198660550188260352}
   - component: {fileID: 199384708410068554}
   m_Layer: 0
-  m_Name: Bullets Right
+  m_Name: Gun Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 198320969624290526}
   - component: {fileID: 199447146998016402}
   m_Layer: 0
-  m_Name: Bullets Left
+  m_Name: Gun Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,14 +122,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984074843439352}
-  m_LocalRotation: {x: -0, y: -0.99941343, z: -0, w: -0.03424667}
-  m_LocalPosition: {x: 473.9, y: -26.5, z: 331.9}
+  m_LocalRotation: {x: -0, y: -0.8590887, z: -0, w: -0.51182675}
+  m_LocalPosition: {x: 369.9, y: -19.7, z: 398.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886332855812152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -183.92499, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -241.57098, z: 0}
 --- !u!4 &4814883956052890
 Transform:
   m_ObjectHideFlags: 1
@@ -9749,7 +9749,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -13282,7 +13282,7 @@ ParticleSystem:
     ribbonCount: 1
     worldSpace: 0
     dieWithParticles: 1
-    sizeAffectsWidth: 1
+    sizeAffectsWidth: 0
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0

@@ -8,14 +8,15 @@ public class Enemy : MonoBehaviour {
 
     [Tooltip("ParticleFX prefab on player. Set to disabled.")] [SerializeField] GameObject deathFX;
     [Tooltip("Points awarded for destroying this enemy")] [SerializeField] int scoreValue = 8;
+    [Tooltip("Number of hits to kill")] [SerializeField] int health = 1;
     ScoreBoard scoreBoard;
-    
-    
+
+
     // Use this for initialization
-    void Start () {
+    void Start() {
         AddNonTriggerBoxCollider();
         scoreBoard = FindObjectOfType<ScoreBoard>();
-	}
+    }
 
     private void AddNonTriggerBoxCollider()
     {
@@ -24,9 +25,14 @@ public class Enemy : MonoBehaviour {
 
     void OnParticleCollision(GameObject other)
     {
-        print(gameObject.name + " Hit by Particles: " + other.gameObject.name);
+        //print(gameObject.name + " Hit by Particles: " + other.gameObject.name);
         //make enemy die
-        playDeathSequence();
+        health--;
+        if (health < 1 || health <= 0)
+        {
+            playDeathSequence();
+        }
+        
     }
 
     private void playDeathSequence()
