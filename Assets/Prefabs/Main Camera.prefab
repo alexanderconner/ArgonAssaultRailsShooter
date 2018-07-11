@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1585777773242414
 GameObject:
   m_ObjectHideFlags: 1
@@ -83,7 +83,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1984074843439352
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +396,9 @@ MonoBehaviour:
   minXRange: -6.5
   maxYRange: 4
   minYRange: -4
+  guns:
+  - {fileID: 1161463074419742}
+  - {fileID: 1871482583171628}
   positionPitchFactor: -2
   positionYawFactor: 6
   controlRollFactor: -20
